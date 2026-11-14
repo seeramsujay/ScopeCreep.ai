@@ -2,11 +2,11 @@ import json
 import os
 import subprocess
 import sys
-import pytest
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, os.path.join(REPO_ROOT, "ai_watchdog_brain"))
 from benchmark import validate_response
+
 
 def test_validate_response_valid():
     valid_resp = {
@@ -15,11 +15,12 @@ def test_validate_response_valid():
         "severity": "HIGH",
         "flagged_action": "Adding payment gateway",
         "prd_violation": "Out of scope for sprint 14",
-        "recommendation": "Postpone to next quarter"
+        "recommendation": "Postpone to next quarter",
     }
     is_valid, errors = validate_response(valid_resp)
     assert is_valid is True
     assert len(errors) == 0
+
 
 def test_validate_response_missing_key():
     invalid_resp = {
@@ -27,11 +28,12 @@ def test_validate_response_missing_key():
         "severity": "NONE",
         "flagged_action": "None",
         "prd_violation": "None",
-        "recommendation": "Proceed"
+        "recommendation": "Proceed",
     }
     is_valid, errors = validate_response(invalid_resp)
     assert is_valid is False
     assert any("alert_id" in err for err in errors)
+
 
 def test_validate_response_invalid_severity():
     invalid_resp = {
@@ -40,11 +42,12 @@ def test_validate_response_invalid_severity():
         "severity": "CRITICAL",  # Not in {"HIGH", "MEDIUM", "LOW", "NONE"}
         "flagged_action": "Foo",
         "prd_violation": "Bar",
-        "recommendation": "Baz"
+        "recommendation": "Baz",
     }
     is_valid, errors = validate_response(invalid_resp)
     assert is_valid is False
     assert any("Invalid severity" in err for err in errors)
+
 
 def test_dataset_integrity():
     dataset_path = os.path.join(REPO_ROOT, "ai_watchdog_brain", "test_dataset.json")
@@ -58,6 +61,7 @@ def test_dataset_integrity():
         assert "chatInput" in case
         assert "is_scope_creep" in case["expected"]
         assert "severity" in case["expected"]
+
 
 def test_backend_syntax():
     server_path = os.path.join(REPO_ROOT, "backend", "server.js")
