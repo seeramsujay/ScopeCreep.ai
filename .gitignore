@@ -38,3 +38,8 @@ lerna-debug.log*
 *.sln
 *.sw?
 *.tsbuildinfo
+.pytest_cache/
+__pycache__/
+*.pyc
+.venv/
+venv/
