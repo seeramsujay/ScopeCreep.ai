@@ -1,10 +1,22 @@
-# 🛰️ ScopeCreep.ai
+<div align="center">
 
-**AI-powered sprint watchdog that catches silent scope creep before it derails your release.**
+<img src="assets/logo.svg" alt="ScopeCreep.ai Logo" width="160" />
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
-[![Hackathon](https://img.shields.io/badge/Mind%20the%20Product-Everyone%20Ships%20Now-blueviolet?style=flat-square)](https://www.mindtheproduct.com/)
-[![Deployment](https://img.shields.io/badge/Production-Live-emerald?style=flat-square)](https://scopecreep-ai.vercel.app)
+# ScopeCreep.ai
+### AI-Powered Sprint Watchdog Detecting Silent Scope Creep Against Locked PRDs
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Frontend: React & Vite](https://img.shields.io/badge/Frontend-React%2019%20%7C%20Tailwind%20v4-61DAFB.svg?logo=react&logoColor=black)](frontend/)
+[![Backend: Express](https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-success.svg)](backend/)
+[![AI: Google Gemini](https://img.shields.io/badge/AI-Gemini%20Delta%20Evaluation-4285F4.svg?logo=google&logoColor=white)](#)
+
+<p align="center">
+  <b>An AI-powered sprint watchdog that continuously compares developer communication and code commits against approved PRD baselines to catch silent scope creep before release deadlines slip.</b>
+</p>
+
+</div>
+
+---
 
 ---
 
